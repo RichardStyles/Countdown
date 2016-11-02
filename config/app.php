@@ -166,7 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Styles\Countdown\CountdownServiceProvider::class,
         //
 
         /*
