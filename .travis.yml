@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 7.0
+
+before_script:
+  - cp .env.travis .env
+  - mysql -e 'create database homestead;'
+  - composer self-update
+  - composer install --dev --prefer-source --no-interaction --quiet
+  - php artisan migrate:install --env=testing --no-interaction -vvv
+
+script:
+  - vendor/bin/phpunit
